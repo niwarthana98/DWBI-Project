@@ -1,0 +1,3417 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/30/2022 3:36:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-7RV7378O"
+  DTS:CreatorName="LAPTOP-7RV7378O\nipun"
+  DTS:DTSID="{055FAE53-77DF-4E11-8C51-54210B360426}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CouponRedemption_Load_Staging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{ED7EBC0D-BD7F-44B4-AC4A-8A6F8A07F9AA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{EDC875B7-625F-4A47-8863-D62FF4A820DA}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\CouponRedemption\campaign_data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_id"
+              DTS:DTSID="{50C9A59B-10F1-440C-B586-B4A8AF2D5B64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_type"
+              DTS:DTSID="{4ADD5579-9BF8-405F-AF7F-9823312675A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{2D17C08D-2EBC-40F7-A646-8155465DF63C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{8FB450BF-34DB-4BDA-A195-65978115D3B9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{88C9778C-F663-4769-9D09-9B378BDC5356}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\CouponRedemption\campaign_data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_id"
+              DTS:DTSID="{157C9F77-65BF-42CD-8699-FBACF52E9DA9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_type"
+              DTS:DTSID="{5526CBA8-77E7-46BD-9406-681D9C3D4601}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{C32CB0FA-34D0-45C6-B55B-43DC03A691AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{28EF16F6-3E7F-4F7D-B616-7D8FBBF8940A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{73F2932F-EC93-4337-9CFE-2D24CBA1FEB7}"
+      DTS:ObjectName="Flat File Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\CouponRedemption\campaign_data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_id"
+              DTS:DTSID="{06769692-8C1C-4FFE-88F7-15CA6CF908EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_type"
+              DTS:DTSID="{17CC243F-2FDF-43FA-9592-01A5F8A6FFCF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{176A23BF-D64A-4A99-82BF-911F6613E7B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{374D5742-2A9E-46C3-9E43-F8D24028AA6A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{EBF2510B-02E1-4F64-A24F-257C3AE577F7}"
+      DTS:ObjectName="Flat File Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\CouponRedemption\campaign_data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_id"
+              DTS:DTSID="{A9178E35-3765-406D-92D8-4867684F36EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_type"
+              DTS:DTSID="{8195907E-22F4-4B2E-A9BF-FF6B02B9F4C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{ED57348A-2498-4BA6-8F5D-79CD396E193E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{AB8D8493-38EC-4F28-977D-B41E02BB01B4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{06214E37-9717-4201-B12A-24424D2994AA}"
+      DTS:ObjectName="Flat File Connection Manager 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\CouponRedemption\campaign_data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_id"
+              DTS:DTSID="{9A8F42DE-8C5E-41A0-B875-A67B6AED8EB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_type"
+              DTS:DTSID="{C41134B0-4412-4766-9781-1884B91AD095}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{08C50A78-BCBA-4964-9998-9D0EFDB84D7D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{EA2EB7BE-4E73-4B6C-8B69-22507AA903E4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 5]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{345B7C06-44D4-4938-AD64-4CFC8B6F4010}"
+      DTS:ObjectName="Flat File Connection Manager 5">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\CouponRedemption\campaign_data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_id"
+              DTS:DTSID="{D172BF1B-44F7-44E3-916E-F168ABBF3087}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="campaign_type"
+              DTS:DTSID="{DBE39EB2-89AA-424B-8D76-0C825E0DB970}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{F337A028-C197-444A-801D-C94B07996DE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{F45E2161-6E9B-45E0-A852-1511A6AD925B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{390EED60-9A83-41B6-B775-5DE9F578600A}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{877BAFE7-0529-4FD0-9617-30CFEDD4FA05}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_SourceDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8D31FFB0-9EDA-45BB-A7B8-CACCF2410CF7}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_SourceDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9BABC9A1-D4BF-4B79-8A9D-2EB2560BB257}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_SourceDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{86360785-49CB-4BEC-9977-BAC567EAEC29}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_SourceDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{31ABE3D1-8FC5-4571-98FC-714787F9FC7C}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{12FC7421-082B-496C-86BF-6AC33786A57E}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 10]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{82F548F8-EF3A-46D9-95E1-CD5E962CCBFA}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 10">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 11]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{339DD46F-3B8B-46AF-9B47-220B9AA92164}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 11">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 12]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7F6A11E4-2BA2-4687-934C-830BD7160462}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 12">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0D62BC7F-B2E6-4A92-8D72-36EA5FEAB98B}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{84814670-78F8-4653-B3C6-5498B9B5A287}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 4]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{93B4352E-468A-4B4B-B887-2F2518FC66D3}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 5]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{643590C1-A9FD-4DB1-B962-1D419FEE41C1}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 5">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 6]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2E8B2928-6B7D-40EF-9E62-D53FC853D9FE}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 6">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 7]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4B28550A-5648-4F86-9871-E5041251C4F6}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 7">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 8]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{07E91773-D591-490E-90A3-7D2E5A8CC0F6}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 8">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 9]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7FB48E57-16A0-4B05-B68E-A0C029FF16C8}"
+      DTS:ObjectName="LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 9">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-7RV7378O\MSSQLSERVER1;Initial Catalog=CouponRedemption_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Campaign Data to staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ABC3CA67-0E68-4B25-AEFD-0AA4EE186796}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Campaign Data to staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Campaign Data to staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{40BC9081-EE33-412C-8371-30570AE9ADE9}"
+          DTS:EventID="16384"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{5E718881-82EC-4252-BDA0-29C2F98929E8}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Campaign Data to staging.EventHandlers[OnPreExecute]\truncate STG campaign"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{66B72E56-C57E-434B-B0C7-89F371EE8790}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="truncate STG campaign"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{82F548F8-EF3A-46D9-95E1-CD5E962CCBFA}"
+                  SQLTask:BypassPrepare="False"
+                  SQLTask:SqlStatementSource="truncate table [CouponRedemption_Staging].[dbo].[CampaignStaging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Campaign Data to staging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Campaign Data to staging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 5]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 5]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[campaign_id]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[campaign_id]"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[campaign_id]"
+                      name="campaign_id"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[campaign_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[campaign_type]"
+                      length="20"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[campaign_type]"
+                      name="campaign_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[start_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[start_date]"
+                      length="50"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[start_date]"
+                      name="start_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[end_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[end_date]"
+                      length="50"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[end_date]"
+                      name="end_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[campaign_id]"
+                      dataType="numeric"
+                      name="campaign_id"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[campaign_type]"
+                      dataType="wstr"
+                      length="20"
+                      name="campaign_type" />
+                    <externalMetadataColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[start_date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[end_date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="end_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Campaign Data to staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[CampaignStaging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Campaign Data to staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 9]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 9]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[campaign_id]"
+                      cachedDataType="numeric"
+                      cachedName="campaign_id"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[campaign_id]"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[campaign_id]" />
+                    <inputColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[campaign_type]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="campaign_type"
+                      externalMetadataColumnId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[campaign_type]"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[campaign_type]" />
+                    <inputColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[start_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="start_date"
+                      externalMetadataColumnId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[start_date]" />
+                    <inputColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[end_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="end_date"
+                      externalMetadataColumnId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[end_date]"
+                      lineageId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output].Columns[end_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[campaign_id]"
+                      dataType="i4"
+                      name="campaign_id" />
+                    <externalMetadataColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[campaign_type]"
+                      dataType="wstr"
+                      length="20"
+                      name="campaign_type" />
+                    <externalMetadataColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Campaign Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Campaign Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Campaign Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Campaign Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Campaign Data to staging.Paths[Flat File Source Output]"
+              endId="Package\Campaign Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Campaign Data to staging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Coupon Redemption Data to staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{466F0D56-083C-40AF-AF5E-E10FBF5146B8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Coupon Redemption Data to staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Coupon Redemption Data to staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{A0B899F3-D4A7-4BC7-B3C1-920CFB4A7680}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{3B9B46FF-1AFE-4BBB-BDF5-78F4C2E80DD0}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Coupon Redemption Data to staging.EventHandlers[OnPreExecute]\truncate STG couponRedemption"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{073DCA4C-6054-4860-80FB-0D6E3F81C9E3}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="truncate STG couponRedemption"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{0D62BC7F-B2E6-4A92-8D72-36EA5FEAB98B}"
+                  SQLTask:SqlStatementSource="truncate table [CouponRedemption_Staging].[dbo].[CouponRedemptionStaging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Coupon Redemption Data to staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[CouponRedemptionStaging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[campaign_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="campaign_id"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[campaign_id]"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[campaign_id]" />
+                    <inputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[coupon_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="coupon_id"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[coupon_id]"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[coupon_id]" />
+                    <inputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[redemption_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="redemption_status"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[redemption_status]"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[redemption_status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[campaign_id]"
+                      dataType="i4"
+                      name="campaign_id" />
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[coupon_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="coupon_id" />
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[redemption_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="redemption_status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Coupon Redemption Data to staging\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[train]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Coupon Redemption Data to staging\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[campaign_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[campaign_id]"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[campaign_id]"
+                      name="campaign_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[coupon_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[coupon_id]"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[coupon_id]"
+                      name="coupon_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[redemption_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[redemption_status]"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[redemption_status]"
+                      name="redemption_status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[campaign_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="campaign_id" />
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[coupon_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="coupon_id" />
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[redemption_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="redemption_status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[campaign_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[campaign_id]"
+                      name="campaign_id" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[coupon_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[coupon_id]"
+                      name="coupon_id" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[redemption_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[redemption_status]"
+                      name="redemption_status" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Coupon Redemption Data to staging.Paths[OLE DB Source Output]"
+              endId="Package\Coupon Redemption Data to staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Coupon Redemption Data to staging\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Customer Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{779B68FC-AB36-441F-BDAE-7C5B893465AC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Customer Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Customer Data to Staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{BE9D2C68-6D52-4322-BC08-FDEECE769174}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{F89F576E-AF06-4351-BDB5-4738FC115025}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Customer Data to Staging.EventHandlers[OnPreExecute]\truncate STG Customer"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{2EBCAE4D-9BFE-45E2-934B-BD864688B4EB}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="truncate STG Customer"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{12FC7421-082B-496C-86BF-6AC33786A57E}"
+                  SQLTask:SqlStatementSource="truncate table [CouponRedemption_Staging].[dbo].[CustomerStaging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Customer Data to Staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CustomerStaging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer Data to Staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 12]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 12]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="i2"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[age_range]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="age_range"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age_range]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[age_range]" />
+                    <inputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[marital_status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="marital_status"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[marital_status]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[marital_status]" />
+                    <inputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rented]"
+                      cachedDataType="bool"
+                      cachedName="rented"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rented]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[rented]" />
+                    <inputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[family_size]"
+                      cachedDataType="ui1"
+                      cachedName="family_size"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[family_size]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[family_size]" />
+                    <inputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_of_children]"
+                      cachedDataType="ui1"
+                      cachedName="no_of_children"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_children]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_of_children]" />
+                    <inputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[income_bracket]"
+                      cachedDataType="ui1"
+                      cachedName="income_bracket"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[income_bracket]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[income_bracket]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="i2"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age_range]"
+                      dataType="wstr"
+                      length="50"
+                      name="age_range" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[marital_status]"
+                      dataType="wstr"
+                      length="50"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rented]"
+                      dataType="bool"
+                      name="rented" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[family_size]"
+                      dataType="ui1"
+                      name="family_size" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_children]"
+                      dataType="ui1"
+                      name="no_of_children" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[income_bracket]"
+                      dataType="ui1"
+                      name="income_bracket" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Customer Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Customer Data to Staging\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[customer_demographics]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer Data to Staging\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[age_range]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[age_range]"
+                      length="50"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[age_range]"
+                      name="age_range"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[marital_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
+                      length="50"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[marital_status]"
+                      name="marital_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[rented]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rented]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[rented]"
+                      name="rented"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[family_size]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[family_size]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[family_size]"
+                      name="family_size"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_of_children]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_of_children]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_of_children]"
+                      name="no_of_children"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[income_bracket]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[income_bracket]"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[income_bracket]"
+                      name="income_bracket"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      dataType="i2"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[age_range]"
+                      dataType="wstr"
+                      length="50"
+                      name="age_range" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
+                      dataType="wstr"
+                      length="50"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rented]"
+                      dataType="bool"
+                      name="rented" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[family_size]"
+                      dataType="ui1"
+                      name="family_size" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_of_children]"
+                      dataType="ui1"
+                      name="no_of_children" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[income_bracket]"
+                      dataType="ui1"
+                      name="income_bracket" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      dataType="i2"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[age_range]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[age_range]"
+                      name="age_range" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[marital_status]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[marital_status]"
+                      name="marital_status" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rented]"
+                      dataType="bool"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rented]"
+                      name="rented" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[family_size]"
+                      dataType="ui1"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[family_size]"
+                      name="family_size" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_of_children]"
+                      dataType="ui1"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_of_children]"
+                      name="no_of_children" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[income_bracket]"
+                      dataType="ui1"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[income_bracket]"
+                      name="income_bracket" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Customer Data to Staging.Paths[OLE DB Source Output]"
+              endId="Package\Customer Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Customer Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Customer Transaction Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7B78BD62-0D20-4F47-BA3A-51BE8C84B611}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Customer Transaction Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Customer Transaction Data to Staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{D2058413-AE05-402B-AF33-8471EF9BD82D}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{E3CA196E-93DC-42DD-B2FC-3EDA788EF213}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Customer Transaction Data to Staging.EventHandlers[OnPreExecute]\truncate STG customerTransaction"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{42709059-77C6-4A8A-98EC-AFF8F35FA13E}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="truncate STG customerTransaction"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{84814670-78F8-4653-B3C6-5498B9B5A287}"
+                  SQLTask:SqlStatementSource="truncate table [CouponRedemption_Staging].[dbo].[CustomerTransaction]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Customer Transaction Data to Staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[CustomerTransactionStaging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]" />
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="i2"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[item_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="item_id"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[item_id]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_id]" />
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[selling_price]"
+                      cachedDataType="r8"
+                      cachedName="selling_price"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[selling_price]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[selling_price]" />
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[other_discount]"
+                      cachedDataType="r8"
+                      cachedName="other_discount"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[other_discount]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[other_discount]" />
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[coupon_discount]"
+                      cachedDataType="r8"
+                      cachedName="coupon_discount"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[coupon_discount]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[coupon_discount]" />
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tID]"
+                      cachedDataType="i4"
+                      cachedName="tID"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tID]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[tID]" />
+                    <inputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="i2"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="item_id" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[selling_price]"
+                      dataType="r8"
+                      name="selling_price" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[other_discount]"
+                      dataType="r8"
+                      name="other_discount" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[coupon_discount]"
+                      dataType="r8"
+                      name="coupon_discount" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tID]"
+                      dataType="i4"
+                      name="tID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Customer Transaction Data to Staging\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[customer_transaction_data_new]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer Transaction Data to Staging\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[item_id]"
+                      length="50"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_id]"
+                      name="item_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[selling_price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[selling_price]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[selling_price]"
+                      name="selling_price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[other_discount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[other_discount]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[other_discount]"
+                      name="other_discount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[coupon_discount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[coupon_discount]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[coupon_discount]"
+                      name="coupon_discount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[tID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tID]"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[tID]"
+                      name="tID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      dataType="i2"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="item_id" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[selling_price]"
+                      dataType="r8"
+                      name="selling_price" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[other_discount]"
+                      dataType="r8"
+                      name="other_discount" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[coupon_discount]"
+                      dataType="r8"
+                      name="coupon_discount" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tID]"
+                      dataType="i4"
+                      name="tID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      dataType="i2"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[item_id]"
+                      name="item_id" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[selling_price]"
+                      dataType="r8"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[selling_price]"
+                      name="selling_price" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[other_discount]"
+                      dataType="r8"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[other_discount]"
+                      name="other_discount" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[coupon_discount]"
+                      dataType="r8"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[coupon_discount]"
+                      name="coupon_discount" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tID]"
+                      dataType="i4"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tID]"
+                      name="tID" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Customer Transaction Data to Staging.Paths[OLE DB Source Output]"
+              endId="Package\Customer Transaction Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Customer Transaction Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Item Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{164AF455-A39D-4DA1-8EC0-DC542C7AF17A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Item Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Item Data to Staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{BD52854C-241C-4FC7-82C5-E6C3A2E7B7EA}"
+          DTS:EventID="16384"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{380AEA78-6F32-44B6-AD17-681AB5ED5AB3}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Item Data to Staging.EventHandlers[OnPreExecute]\truncate  STG Item"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{F93E6FAB-17BA-4092-A81C-77E19E1F7769}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="truncate  STG Item"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{31ABE3D1-8FC5-4571-98FC-714787F9FC7C}"
+                  SQLTask:SqlStatementSource="truncate table[CouponRedemption_Staging].[dbo].[ItemStaging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Item Data to Staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ItemStaging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Item Data to Staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[item_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="item_id"
+                      externalMetadataColumnId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[item_id]"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_id]" />
+                    <inputColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[brand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="brand"
+                      externalMetadataColumnId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[brand]"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand]" />
+                    <inputColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[brand_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="brand_type"
+                      externalMetadataColumnId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[brand_type]"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand_type]" />
+                    <inputColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="category"
+                      externalMetadataColumnId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[category]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="item_id" />
+                    <externalMetadataColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="brand" />
+                    <externalMetadataColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[brand_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="brand_type" />
+                    <externalMetadataColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="category" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Item Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Item Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Item Data to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Item Data to Staging\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[item_data]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Item Data to Staging\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-7RV7378O\MSSQLSERVER1.CouponRedemption_SourceDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[item_id]"
+                      length="50"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_id]"
+                      name="item_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[brand]"
+                      length="50"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand]"
+                      name="brand"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[brand_type]"
+                      length="50"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand_type]"
+                      name="brand_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[category]"
+                      length="50"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[category]"
+                      name="category"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="item_id" />
+                    <externalMetadataColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="brand" />
+                    <externalMetadataColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[brand_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="brand_type" />
+                    <externalMetadataColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="category" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[item_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[item_id]"
+                      name="item_id" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[brand]"
+                      name="brand" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[brand_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[brand_type]"
+                      name="brand_type" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[category]"
+                      name="category" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Item Data to Staging.Paths[OLE DB Source Output]"
+              endId="Package\Item Data to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Item Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{02B8F47D-6F2C-410C-AC63-88F9DEE2B47D}"
+      DTS:From="Package\Item Data to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Customer Data to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0FA9DB0D-B4FB-4D1A-8352-9331824B22B0}"
+      DTS:From="Package\Customer Data to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Coupon Redemption Data to staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{7AB6C05C-7899-44EA-A6E4-D033C952323F}"
+      DTS:From="Package\Coupon Redemption Data to staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Customer Transaction Data to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{102EC7AB-1EBE-4060-8380-12C632D9E4EC}"
+      DTS:From="Package\Customer Transaction Data to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Campaign Data to staging" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="232.8,41.6"
+          Id="Package\Campaign Data to staging"
+          TopLeft="257.142861521974,385.411770111137" />
+        <NodeLayout
+          Size="228.8,41.6"
+          Id="Package\Coupon Redemption Data to staging"
+          TopLeft="254.285718616174,220.235297206364" />
+        <NodeLayout
+          Size="229.6,41.6"
+          Id="Package\Customer Data to Staging"
+          TopLeft="252.142861436824,143.000002005522" />
+        <NodeLayout
+          Size="257.6,41.6"
+          Id="Package\Customer Transaction Data to Staging"
+          TopLeft="253.571432889725,295.176474727974" />
+        <NodeLayout
+          Size="228,47.2"
+          Id="Package\Item Data to Staging"
+          TopLeft="247.642861266526,65.1470596600569" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="364.292861351675,112.347059660057">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.6529423454646"
+              Start="0,0"
+              End="0,23.1529423454646">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.1529423454646" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="367.814290026499,184.600002005522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6352952008425"
+              Start="0,0"
+              End="0,28.1352952008425">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1352952008425" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="368.685718616174,261.835297206364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.6857142735511,33.34117752161"
+              Start="0,0"
+              End="13.6857142735511,25.84117752161">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.670588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.670588760805"
+                    Point2="0,16.670588760805"
+                    Point3="4,16.670588760805" />
+                  <mssgle:LineSegment
+                    End="9.68571427355107,16.670588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.68571427355107,16.670588760805"
+                    Point2="13.6857142735511,16.670588760805"
+                    Point3="13.6857142735511,20.670588760805" />
+                  <mssgle:LineSegment
+                    End="13.6857142735511,25.84117752161" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="382.371432889725,336.776474727974">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.82857136775101,48.635295383163"
+              Start="0,0"
+              End="-8.82857136775101,41.135295383163">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3176476915815" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3176476915815"
+                    Point2="0,24.3176476915815"
+                    Point3="-4,24.3176476915815" />
+                  <mssgle:LineSegment
+                    End="-4.82857136775101,24.3176476915815" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.82857136775101,24.3176476915815"
+                    Point2="-8.82857136775101,24.3176476915815"
+                    Point3="-8.82857136775101,28.3176476915815" />
+                  <mssgle:LineSegment
+                    End="-8.82857136775101,41.135295383163" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Campaign Data to staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Campaign Data to staging\OLE DB Destination"
+          TopLeft="481,276" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Campaign Data to staging\Flat File Source"
+          TopLeft="194,121" />
+        <EdgeLayout
+          Id="Package\Campaign Data to staging.Paths[Flat File Source Output]"
+          TopLeft="269.2,162.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="297,113.4"
+              Start="0,0"
+              End="297,105.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.7"
+                    Point2="0,56.7"
+                    Point3="4,56.7" />
+                  <mssgle:LineSegment
+                    End="293,56.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="293,56.7"
+                    Point2="297,56.7"
+                    Point3="297,60.7" />
+                  <mssgle:LineSegment
+                    End="297,105.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Campaign Data to staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Campaign Data to staging.EventHandlers[OnPreExecute]\truncate STG campaign"
+          TopLeft="342,134" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Campaign Data to staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Coupon Redemption Data to staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Coupon Redemption Data to staging\OLE DB Destination"
+          TopLeft="452,213" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Coupon Redemption Data to staging\OLE DB Source"
+          TopLeft="274,71" />
+        <EdgeLayout
+          Id="Package\Coupon Redemption Data to staging.Paths[OLE DB Source Output]"
+          TopLeft="348.8,112.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188.4,100.4"
+              Start="0,0"
+              End="188.4,92.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.2"
+                    Point2="0,50.2"
+                    Point3="4,50.2" />
+                  <mssgle:LineSegment
+                    End="184.4,50.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184.4,50.2"
+                    Point2="188.4,50.2"
+                    Point3="188.4,54.2" />
+                  <mssgle:LineSegment
+                    End="188.4,92.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Coupon Redemption Data to staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\Coupon Redemption Data to staging.EventHandlers[OnPreExecute]\truncate STG couponRedemption"
+          TopLeft="313,94" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Coupon Redemption Data to staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Coupon Redemption Data to staging\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Customer Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Customer Data to Staging\OLE DB Source"
+          TopLeft="286,44" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Customer Data to Staging\OLE DB Destination"
+          TopLeft="404,169.470588213845" />
+        <EdgeLayout
+          Id="Package\Customer Data to Staging.Paths[OLE DB Source Output]"
+          TopLeft="360.8,85.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.4,83.8705882138447"
+              Start="0,0"
+              End="128.4,76.3705882138447">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9352941069224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.9352941069224"
+                    Point2="0,41.9352941069224"
+                    Point3="4,41.9352941069224" />
+                  <mssgle:LineSegment
+                    End="124.4,41.9352941069224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.4,41.9352941069224"
+                    Point2="128.4,41.9352941069224"
+                    Point3="128.4,45.9352941069224" />
+                  <mssgle:LineSegment
+                    End="128.4,76.3705882138447" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Customer Data to Staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Customer Data to Staging.EventHandlers[OnPreExecute]\truncate STG Customer"
+          TopLeft="244,146" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Data to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Data to Staging\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Customer Transaction Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Customer Transaction Data to Staging\OLE DB Source"
+          TopLeft="241,108" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Customer Transaction Data to Staging\OLE DB Destination"
+          TopLeft="388,255" />
+        <EdgeLayout
+          Id="Package\Customer Transaction Data to Staging.Paths[OLE DB Source Output]"
+          TopLeft="315.8,149.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157.4,105.4"
+              Start="0,0"
+              End="157.4,97.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.7"
+                    Point2="0,52.7"
+                    Point3="4,52.7" />
+                  <mssgle:LineSegment
+                    End="153.4,52.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="153.4,52.7"
+                    Point2="157.4,52.7"
+                    Point3="157.4,56.7" />
+                  <mssgle:LineSegment
+                    End="157.4,97.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Customer Transaction Data to Staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\Customer Transaction Data to Staging.EventHandlers[OnPreExecute]\truncate STG customerTransaction"
+          TopLeft="413,139" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Transaction Data to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Transaction Data to Staging\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Item Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Item Data to Staging\OLE DB Source"
+          TopLeft="120.000002043588,47.4117653708145" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Item Data to Staging\OLE DB Destination"
+          TopLeft="254.285718616174,170.529414156317" />
+        <EdgeLayout
+          Id="Package\Item Data to Staging.Paths[OLE DB Source Output]"
+          TopLeft="194.800002043588,89.0117653708145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.685716572587,81.5176487855021"
+              Start="0,0"
+              End="144.685716572587,74.0176487855021">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.758824392751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.758824392751"
+                    Point2="0,40.758824392751"
+                    Point3="4,40.758824392751" />
+                  <mssgle:LineSegment
+                    End="140.685716572587,40.758824392751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140.685716572587,40.758824392751"
+                    Point2="144.685716572587,40.758824392751"
+                    Point3="144.685716572587,44.758824392751" />
+                  <mssgle:LineSegment
+                    End="144.685716572587,74.0176487855021" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Item Data to Staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Item Data to Staging.EventHandlers[OnPreExecute]\truncate  STG Item"
+          TopLeft="202,138" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Item Data to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Item Data to Staging\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
